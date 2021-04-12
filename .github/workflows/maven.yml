@@ -20,7 +20,11 @@ jobs:
       uses: actions/setup-java@v1
       with:
         java-version: 11
-    - name: Build with Maven
+    - name: Set up Maven
+      uses: aahmed-se/setup-maven@v3
+      with:
+        maven-version: 3.6.3
+    - name: Build with Maven      
       run: mvn -B package --file pom.xml
     - name: Generate Cucumber report
       uses: deblockt/cucumber-report-annotations-action@v1.7
